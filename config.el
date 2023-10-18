@@ -34,6 +34,11 @@
 (setq user-full-name "gujixian"
       user-mail-address "gujixian@gmail.com")
 
+;; time-stamp相关
+(setq time-stamp-format "<%Y-%m-%d %a %H:%M>")
+(setq time-stamp-end "^\\\\s-*Time-stamp:[ \t]*<")
+(setq time-stamp-start "^\\\\s-*Time-stamp:[ \t]*")
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
