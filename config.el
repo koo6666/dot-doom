@@ -39,6 +39,9 @@
 (setq time-stamp-end "^\\\\s-*Time-stamp:[ \t]*<")
 (setq time-stamp-start "^\\\\s-*Time-stamp:[ \t]*")
 
+;; font-cache
+(setq inhibit-compacting-font-caches t)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
