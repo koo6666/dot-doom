@@ -18,29 +18,11 @@
 ;; 解决粘贴中文出现乱码的问题
 (if (eq system-type 'windows-nt)
     (progn
-      ;; (setq selection-coding-system 'utf-16le-dos) ;; 修复从网页剪切文本过来时显示 \nnn \nnn 的问题
+      ;; (setq selection-coding-system 'utf-16le-dos) ;; 修复从网页剪切文本过来时显示的问题
       ;; (set-default selection-coding-system 'utf-16le-dos)
       (set-selection-coding-system 'utf-16le-dos) ;; 别名set-clipboard-coding-system
       )
   (set-selection-coding-system 'utf-8))
-
-;;;;; Startup optimizations
-
-;;;;;; Set garbage collection threshold
-
-;; From https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
-
-(setq gc-cons-threshold-original gc-cons-threshold)
-(setq gc-cons-threshold (* 1024 1024 100))
-
-;;;;;; Set file-name-handler-alist
-
-;; Also from https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
-
-(setq file-name-handler-alist-original file-name-handler-alist)
-(setq file-name-handler-alist nil)
-
-;;;;;; Set deferred timer to reset them
 
 (run-with-idle-timer
  5 nil
@@ -55,14 +37,6 @@
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "gujixian"
       user-mail-address "gujixian@gmail.com")
-
-;; time-stamp相关
-(setq time-stamp-format "<%Y-%m-%d %a %H:%M>")
-(setq time-stamp-end "^\\\\s-*Time-stamp:[ \t]*<")
-(setq time-stamp-start "^\\\\s-*Time-stamp:[ \t]*")
-
-;; font-cache
-(setq inhibit-compacting-font-caches t)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
